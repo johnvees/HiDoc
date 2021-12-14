@@ -1,14 +1,13 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Gap} from '../../../components';
-import {IconBackDark} from '../../../assets';
-import {colors} from '../../../utils';
+import {colors, fonts} from '../../../utils';
+import {Button, Gap} from '../../atoms';
 
-const Header = () => {
+const Header = ({onPress, title}) => {
   return (
     <View style={styles.container}>
-      <IconBackDark />
-      <Text style={styles.text}>Daftar Akun</Text>
+      <Button type="icon-only" icon="back-dark" onPress={onPress} />
+      <Text style={styles.text}>{title}</Text>
       <Gap width={24} />
     </View>
   );
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontFamily: 'Nunito-SemiBold',
+    fontFamily: fonts.primary[600],
     color: colors.text.primary,
     textAlign: 'center',
     flex: 1,
